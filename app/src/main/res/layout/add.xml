@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#ECEFF1">
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add User"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#3D5AFE"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="24dp"
+        android:fontFamily="sans-serif-condensed"/>
+
+    <!-- Username Label and EditText -->
+    <TextView
+        android:id="@+id/label_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="16sp"
+        android:textColor="#455A64"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/editText_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter username"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:textColor="#37474F"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"/>
+
+    <!-- Password Label and EditText -->
+    <TextView
+        android:id="@+id/label_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="16sp"
+        android:textColor="#455A64"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editText_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter password"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:textColor="#37474F"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"
+        android:inputType="textPassword"/>
+
+    <!-- Fullname Label and EditText -->
+    <TextView
+        android:id="@+id/label_fullname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full Name"
+        android:textSize="16sp"
+        android:textColor="#455A64"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editText_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter full name"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:textColor="#37474F"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"/>
+
+    <!-- Email Label and EditText -->
+    <TextView
+        android:id="@+id/label_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="16sp"
+        android:textColor="#455A64"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editText_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter email"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:textColor="#37474F"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"
+        android:inputType="textEmailAddress"/>
+
+    <!-- Add Button -->
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="24dp"
+        android:padding="16dp"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/custom_button"
+        android:onClick="onAddButtonClick"/>
+</LinearLayout>
