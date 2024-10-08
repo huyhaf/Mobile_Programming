@@ -50,9 +50,9 @@
         android:text="Select Date of Birth" />
 
     <Button
-        android:id="@+id/addButton"
+        android:id="@+id/updateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add User" />
+        android:text="Update User" />
 
 </LinearLayout>

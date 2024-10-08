@@ -1,38 +1,49 @@
 package com.map.HaNhatHuy.bt1.model;
 
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.Date;
 
 public class User implements Serializable {
-    private String userName;
-
-    private String fullName;
-
-    private String email;
-
+    private int id;
+    private String username;
     private String password;
+    private String name;
+    private String email;
+    private String telephoneNum;
+    private String gender;
+    private Date dob;
 
-    public User(String userName, String password) {
-        this.userName = userName;
+    public User(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
-    public User(String userName, String fullName, String email, String password) {
-        this.userName = userName;
-        this.fullName = fullName;
+    // Constructor
+    public User(int id, String username, String password, String name, String email, String telephoneNum, String gender, Date dob) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.name = name;
         this.email = email;
-        this.password = password;
+        this.telephoneNum = telephoneNum;
+        this.gender = gender;
+        this.dob = dob;
     }
 
-    public User() {
+    public int getId() {
+        return id;
     }
 
-    public String getUserName() {
-        return userName;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -43,6 +54,14 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -51,34 +70,27 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getTelephoneNum() {
+        return telephoneNum;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setTelephoneNum(String telephoneNum) {
+        this.telephoneNum = telephoneNum;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userName='" + userName + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+    public String getGender() {
+        return gender;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return Objects.equals(userName, user.userName) && Objects.equals(password, user.password);
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(userName, fullName, email, password);
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 }

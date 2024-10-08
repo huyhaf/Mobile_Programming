@@ -1,68 +1,53 @@
 package com.map.HaNhatHuy.bt1.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.map.HaNhatHuy.bt1.R;
-import com.map.HaNhatHuy.bt1.UserHome;
 import com.map.HaNhatHuy.bt1.model.User;
 
-import java.util.ArrayList;
-
 public class LoginAct extends AppCompatActivity {
-
-    // Declare the EditText and Button fields
-    EditText txtUsername;
-    EditText txtPassword;
-    Button btnLogin;
-
-    ArrayList<User>lstUser;
+    private EditText txtUsername;
+    private EditText txtPassword;
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login); // Set the layout defined in XML
+        setContentView(R.layout.login);
 
-        // Initialize the EditText and Button fields
-        txtUsername = findViewById(R.id.usernameInput);
-        txtPassword = findViewById(R.id.passwordInput);
-        btnLogin = findViewById(R.id.loginButton);
+        // Initialize UI elements
+        txtUsername = findViewById(R.id.editTextUsername);
+        txtPassword = findViewById(R.id.editTextPassword);
+        btnLogin = findViewById(R.id.buttonLogin);
 
-        // Set the onClick listener for the login button
+        // Set a click listener for the login button
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                onLoginButtonClick(v);
+            public void onClick(View view) {
+                // Retrieve entered username and password
+                String username = txtUsername.getText().toString();
+                String password = txtPassword.getText().toString();
+                User authen_user = new User("B21DCVT134","12345678");
+                // Implement authentication logic here
+                if (username.equals(authen_user.getUsername()) && password.equals(authen_user.getPassword())) {
+                    // Successful login
+                    Toast.makeText(LoginAct.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginAct.this, UserHome.class);
+                    intent.putExtra("user",authen_user);
+                    startActivity(intent);
+                } else {
+                    // Failed login
+                    Toast.makeText(LoginAct.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
-    // Method to handle the button click
-    public void onLoginButtonClick(View view) {
-        String username = txtUsername.getText().toString();
-        String password = txtPassword.getText().toString();
-        User user = new User(username,password);
-        lstUser = new ArrayList<>();
-
-        if (validateCredentials(user)) {
-            // Create an Intent to start UserHome activity
-            Intent intent = new Intent(this, UserHome.class);
-            // Pass the username to the UserHome activity
-            intent.putExtra("user", user);
-            intent.putExtra("lstUser",lstUser);
-            startActivity(intent);
-        } else {
-            txtUsername.setError("Invalid username or password");
-        }
-    }
-
-    // A simple method to validate credentials (just a placeholder for your logic)
-    private boolean validateCredentials(User user) {
-        // Replace this with your actual validation logic
-        return user.equals(new User("B21DCVT224","30032003"));
-    }
 }
-
